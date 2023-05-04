@@ -1,0 +1,524 @@
+/* 共通 */
+body {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+/* PC用スタイル */
+@media screen and (min-width: 768px) {
+  /* 共通 */
+  h1 {
+    font-size: 40px;
+  }
+
+  /* ヘッダー */
+  .header_band {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    justify-content: space-between;
+    z-index: 10;
+
+    /* padding: 20px; */
+  }
+  .header_band > div > h1 {
+    font-size: 60px;
+    margin: 10px 0px 0px 50px;
+  }
+  /* ハンバーガーメニュー */
+  .hamburger {
+    width: 50px;
+    height: 30px;
+    position: relative;
+    z-index: 99;
+    top: 20px;
+    margin: 10px 50px 0px 0px;
+  }
+  .hamburger:hover {
+    cursor: pointer;
+  }
+  .hamburger > span {
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+
+    transition: 0.5s;
+  }
+  .hamburger > span:first-of-type {
+    top: 0%;
+  }
+  .hamburger > span:nth-of-type(2) {
+    top: 50%;
+  }
+  .hamburger > span:nth-last-of-type(3) {
+    top: 100%;
+  }
+
+  /* ハンバーガーメニューのリスト(通常) */
+  .hamburger_bar {
+    width: 30%;
+    background-color: black;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    z-index: 98;
+  }
+  .nav {
+    width: 90%;
+    margin: 80px auto 0 auto;
+    flex-direction: column;
+  }
+  .nav > p {
+    border-top: solid 2px white;
+    padding: 20px 20px 20px 20px;
+    margin: 0;
+    font-size: 20px;
+    display: block;
+  }
+  .nav > p:last-of-type {
+    border-bottom: solid 2px white;
+  }
+  .nav > p > a {
+    color: white;
+    text-decoration: none;
+  }
+  /* SNS */
+  .sns {
+    width: 90%;
+    margin: 80px auto 0 auto;
+  }
+  .sns > li {
+    list-style: none;
+    padding: 10px 0 20px 20px;
+  }
+  .sns > li > a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  /* ハンバーガーメニュークリック後 */
+  .hamburger.active {
+    z-index: 99;
+  }
+  .hamburger.active > span:first-of-type {
+    top: 50%;
+    transform: rotate(-225deg);
+    background-color: black;
+  }
+  .hamburger.active > span:nth-of-type(2) {
+    top: 50%;
+    display: none;
+    background-color: black;
+  }
+  .hamburger.active > span:last-of-type {
+    top: 50%;
+    transform: rotate(225deg);
+    background-color: black;
+  }
+  .hamburger_bar.active {
+    width: 30%;
+    background-color: black;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(0%);
+    position: fixed;
+    z-index: 98;
+    transition: 1s;
+  }
+  /* .background.active {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 9;
+    position: absolute;
+  } */
+
+  /* 動画 */
+  video {
+    position: relative;
+    top: 100px;
+    margin-bottom: 150px;
+    width: 100%x;
+  }
+
+  /* Pick up */
+  .Pickup {
+    margin-bottom: 100px;
+    text-align: center;
+
+    position: relative;
+  }
+  .carousel > li {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel > li > img {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    margin: 0;
+  }
+  .carouselImg {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  /* Feature */
+  .feature {
+    margin: 0 auto 0 auto;
+    width: 80%;
+  }
+  .feature > h1 {
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .row {
+    margin: 0 auto 30px auto;
+    width: 90%;
+  }
+  .content {
+    width: 100%;
+    box-shadow: 3px 3px 5px rgb(150, 150, 150);
+    margin-bottom: 30px;
+  }
+  .content > img {
+    width: 100%;
+  }
+  .text {
+    padding: 30px;
+    display: block;
+  }
+
+  .text > p:first-of-type {
+    text-align: left;
+  }
+  .text > p:nth-last-of-type(2) {
+    text-align: left;
+    font-weight: bold;
+  }
+  .text > p:last-of-type {
+    text-align: right;
+    color: gray;
+    left: 0;
+  }
+
+  /* フッター */
+  footer {
+    background-color: black;
+  }
+  footer > h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+  }
+  .contact {
+    width: 70%;
+    margin: 0 auto 30px auto;
+    display: flex;
+  }
+  .info {
+    width: 50%;
+  }
+  .info > p {
+    color: white;
+  }
+  /* フォーム */
+  .form {
+    flex-direction: column;
+    display: block;
+    width: 50%;
+  }
+  .box {
+    margin-bottom: 20px;
+  }
+  label {
+    color: white;
+  }
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  .submit {
+    width: 200px;
+    height: 50px;
+    border: white solid 1px;
+    background-color: black;
+    color: white;
+  }
+  .copy {
+    border-top: 1px solid rgb(176, 176, 176);
+    text-align: center;
+  }
+  .copy > p {
+    color: white;
+  }
+}
+
+/* ----------------------
+スマホ用スタイル 
+/* ------------------- */
+@media screen and (max-width: 767px) {
+  /* ヘッダー */
+  .header_band {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 90;
+    background-color: white;
+    padding-bottom: 20px;
+  }
+  .header_band > div > h1 {
+    font-size: 30px;
+    margin: 20px 10px 0px 20px;
+  }
+  /* ハンバーガーメニュー */
+  .hamburger {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    z-index: 100;
+    top: 20px;
+    margin: 10px 30px 0px 0px;
+  }
+  .hamburger > span {
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    transition: 0.5s;
+  }
+  .hamburger > span:first-of-type {
+    top: 0%;
+  }
+  .hamburger > span:nth-of-type(2) {
+    top: 50%;
+  }
+  .hamburger > span:nth-last-of-type(3) {
+    top: 100%;
+  }
+
+  /* ハンバーガーメニューのリスト(通常) */
+  .hamburger_bar {
+    width: 30%;
+    background-color: black;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    z-index: 100;
+  }
+  .nav {
+    width: 80%;
+    margin: 80px auto 0 auto;
+  }
+  .nav > p {
+    border-top: solid 2px white;
+    padding: 20px 20px 20px 20px;
+    margin: 0;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+  }
+  .nav > p:last-of-type {
+    border-bottom: solid 2px white;
+  }
+  .nav > p > a {
+    color: white;
+    text-decoration: none;
+  }
+  /* SNS */
+  .sns {
+    width: 90%;
+    margin: 80px auto 0 auto;
+  }
+  .sns > li {
+    list-style: none;
+    padding: 10px 0 20px 20px;
+  }
+  .sns > li > a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  /* ハンバーガーメニュークリック後 */
+  .hamburger.active {
+    z-index: 99;
+  }
+  .hamburger.active > span:first-of-type {
+    top: 50%;
+    transform: rotate(-225deg);
+    background-color: black;
+  }
+  .hamburger.active > span:nth-of-type(2) {
+    top: 50%;
+    display: none;
+    background-color: black;
+  }
+  .hamburger.active > span:last-of-type {
+    top: 50%;
+    transform: rotate(225deg);
+    background-color: black;
+  }
+  .hamburger_bar.active {
+    width: 50%;
+    background-color: black;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(0%);
+    position: fixed;
+    z-index: 98;
+    transition: 1s;
+  }
+  /* .background.active {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 9;
+    position: absolute;
+  } */
+
+  /* 動画 */
+
+  video {
+    position: relative;
+    top: 100px;
+    margin-bottom: 150px;
+
+    width: 100%;
+    padding: 0 auto 100px 100px;
+  }
+
+  /* Pick up */
+  .Pickup {
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .carousel > li {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel > li > img {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    margin: 0;
+    max-width: 300px;
+  }
+  .carouselImg {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  /* Feature */
+  .feature {
+    margin: 0 auto 0 auto;
+    width: 80%;
+  }
+  .feature > h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .row {
+    margin: 0 auto 30px auto;
+    max-width: 90%;
+  }
+  .content {
+    width: 100%;
+    box-shadow: 3px 3px 5px rgb(150, 150, 150);
+    margin-bottom: 30px;
+  }
+  .content > img {
+    max-width: 100%;
+  }
+  .text {
+    padding: 30px;
+    display: block;
+  }
+
+  .text > p:first-of-type {
+    text-align: left;
+  }
+  .text > p:nth-last-of-type(2) {
+    text-align: left;
+    font-weight: bold;
+  }
+  .text > p:last-of-type {
+    text-align: right;
+    color: gray;
+    left: 0;
+  }
+
+  /* フッター */
+  footer {
+    background-color: black;
+  }
+  footer > h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+  }
+  .contact {
+    width: 70%;
+    margin: 0 auto 30px auto;
+  }
+  .info {
+    width: 100%;
+  }
+  .info > p {
+    color: white;
+  }
+  /* フォーム */
+  .form {
+    flex-direction: column;
+    display: block;
+    width: 100%;
+  }
+  .box {
+    margin-bottom: 20px;
+  }
+  label {
+    color: white;
+  }
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  .submit {
+    width: 100%;
+    height: 50px;
+    border: white solid 1px;
+    background-color: black;
+    color: white;
+  }
+  .copy {
+    border-top: 1px solid rgb(176, 176, 176);
+    text-align: center;
+  }
+  .copy > p {
+    color: white;
+  }
+}
